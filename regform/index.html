@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <!-- Firstname, lastname, email, tel, password, password confirmation -->
+    <main>
+      <h1 class="form-head">Registration Form</h1>
+      <form class="reg-form">
+        <label class="form-label">
+          <span class="label-caption">First name:</span>
+          <input
+            class="form-input"
+            type="text"
+            name="user-name"
+            placeholder="Name"
+            required
+            autofocus
+            tabindex="1"
+          />
+          <!-- minlength="2"
+          maxlength="32"
+          pattern="[A-Z][a-z]*" -->
+        </label>
+        <!-- Додати для прізвища 1) необов'язкове 2) * вигляду Карпенко-Карий -->
+        <label class="form-label">
+          <span class="label-caption">Last name:</span>
+          <input
+            class="form-input"
+            type="text"
+            name="user-surname"
+            tabindex="2"
+            minlength="2"
+            maxlength="65"
+            pattern="[A-Z][a-z]{1,31}(-[A-Z][a-z]{1,31})?"
+            placeholder="Surname"
+          />
+        </label>
+
+        <label class="form-label">
+          <span class="label-caption">Email:</span>
+          <input
+            class="form-input"
+            type="email"
+            name="user-email"
+            placeholder="mail@mail.mail"
+            tabindex="3"
+            required
+          />
+        </label>
+        <!-- Додати для tel необов'язкове  -->
+        <label class="form-label">
+          <span class="label-caption">Phone:</span>
+          <input
+            class="form-input"
+            type="tel"
+            name="user-phone"
+            tabindex="4"
+            pattern="\+380-?\d{2}-?\d{3}-?\d{4}"
+            placeholder="+380-00-000-0000"
+          />
+        </label>
+
+        <label class="form-label">
+          <span class="label-caption">Password:</span>
+          <input
+            class="form-input"
+            type="password"
+            name="user-passw"
+            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&.]).{8,16}"
+            required
+            tabindex="5"
+          />
+        </label>
+
+        <label class="form-label">
+          <span class="label-caption">Password confirmation:</span>
+          <input
+            class="form-input"
+            type="password"
+            name="user-passw-conf"
+            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,16}"
+            required
+            tabindex="6"
+          />
+        </label>
+
+        <button class="submit-btm" type="submit">Register</button>
+      </form>
+    </main>
+  </body>
+</html>
